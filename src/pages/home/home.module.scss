@@ -1,0 +1,1183 @@
+.home {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(7.2rem, 14vh, 9.5rem) var(--page-gutter)
+    clamp(3.5rem, 6vw, 5.5rem);
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 6rem;
+}
+
+.heroHalo {
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: min(66vw, 920px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(232, 189, 120, 0.09),
+    rgba(233, 166, 184, 0.025) 45%,
+    transparent 67%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.89fr) minmax(0, 1.11fr);
+  align-items: center;
+  gap: clamp(2.5rem, 4.8vw, 5rem);
+}
+
+.heroCopy {
+  max-width: 560px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(247, 220, 164, 0.76);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow::after {
+  content: "";
+  width: 46px;
+  height: 1px;
+  margin-left: 0.35rem;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 189, 120, 0.42),
+    transparent
+  );
+}
+
+.eyebrowStar {
+  color: var(--rose);
+  font-size: 0.65rem;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(233, 166, 184, 0.55);
+}
+
+.title {
+  margin-top: clamp(1.1rem, 2.4vw, 1.65rem);
+  display: flex;
+  flex-direction: column;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 5vw, 4.55rem);
+  font-weight: 350;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.titleMask {
+  display: block;
+  overflow: hidden;
+  padding: 0.12em 0.08em 0.16em 0.04em;
+  margin: -0.12em -0.08em -0.04em -0.04em;
+}
+
+.titleLine {
+  display: block;
+  will-change: transform;
+}
+
+.titleName {
+  margin-top: 0.05em;
+  padding-right: 0.06em;
+  font-size: 0.82em;
+  font-style: italic;
+  font-weight: 330;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  background: linear-gradient(
+    103deg,
+    #fff7e2 4%,
+    #f4d293 34%,
+    #e8bd78 64%,
+    #edb3c2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.lead {
+  max-width: 500px;
+  margin-top: clamp(1.2rem, 2.2vw, 1.6rem);
+  color: rgba(203, 208, 221, 0.7);
+  font-size: clamp(0.86rem, 1vw, 0.96rem);
+  line-height: 1.82;
+  letter-spacing: 0.002em;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+  margin-top: 1.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(232, 189, 120, 0.14);
+  border-radius: 999px;
+  background: rgba(9, 14, 25, 0.38);
+  color: rgba(203, 208, 221, 0.62);
+  font-size: 0.53rem;
+  font-weight: 500;
+  letter-spacing: 0.055em;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.chipSymbol {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: clamp(1.7rem, 3vw, 2.15rem);
+}
+
+.scrollCue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  padding: 0;
+  color: var(--cream);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.scrollIcon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(232, 189, 120, 0.28);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-size: 0.82rem;
+  line-height: 1;
+  transition:
+    transform 280ms ease,
+    background-color 280ms ease,
+    border-color 280ms ease;
+  animation: arrowBob 3s ease-in-out infinite;
+}
+
+.scrollCue:hover .scrollIcon {
+  transform: translateY(4px);
+  border-color: rgba(232, 189, 120, 0.58);
+  background: rgba(232, 189, 120, 0.08);
+}
+
+.heroSignature {
+  color: rgba(170, 177, 196, 0.46);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.lab {
+  position: relative;
+  padding: 0.78rem;
+  border: 1px solid rgba(232, 189, 120, 0.16);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      ellipse at 88% 0%,
+      rgba(232, 189, 120, 0.09),
+      transparent 42%
+    ),
+    linear-gradient(152deg, rgba(22, 30, 49, 0.9), rgba(8, 12, 23, 0.88));
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(22px);
+  overflow: hidden;
+}
+
+.lab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(247, 220, 164, 0.64),
+    transparent
+  );
+}
+
+.lab::after {
+  content: "";
+  position: absolute;
+  top: -160px;
+  right: -130px;
+  width: 330px;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(232, 189, 120, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.labBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0.55rem 0.78rem;
+}
+
+.labHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.labKicker {
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 420;
+  letter-spacing: -0.01em;
+}
+
+.labNote {
+  color: rgba(170, 177, 196, 0.42);
+  font-size: 0.48rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.liveBadge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.32rem 0.54rem;
+  border: 1px solid rgba(142, 216, 202, 0.19);
+  border-radius: 999px;
+  background: rgba(142, 216, 202, 0.035);
+  color: rgba(142, 216, 202, 0.72);
+  font-size: 0.45rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.liveDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px rgba(142, 216, 202, 0.7);
+  animation: livePulse 2.8s ease-in-out infinite;
+}
+
+.tabs {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.28rem;
+  padding: 0 0.2rem 0.55rem;
+}
+
+.tab {
+  position: relative;
+  min-height: 61px;
+  padding: 0.44rem 0.24rem 0.48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.34rem;
+  border: 1px solid rgba(248, 243, 232, 0.055);
+  border-radius: 14px;
+  background: rgba(4, 8, 15, 0.26);
+  color: rgba(203, 208, 221, 0.52);
+  transition:
+    color 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease,
+    transform 240ms ease;
+  overflow: hidden;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22%;
+  right: 22%;
+  height: 1px;
+  background: rgba(247, 220, 164, 0.8);
+  opacity: 0;
+  transform: scaleX(0.3);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.tab:hover {
+  color: var(--cream);
+  border-color: rgba(232, 189, 120, 0.2);
+  background: rgba(232, 189, 120, 0.035);
+  transform: translateY(-1px);
+}
+
+.tabIcon {
+  width: 19px;
+  height: 19px;
+  opacity: 0.72;
+  transition:
+    opacity 240ms ease,
+    color 240ms ease,
+    transform 300ms ease;
+}
+
+.tabIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabLabel {
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.tabActive {
+  color: var(--gold-bright);
+  border-color: rgba(232, 189, 120, 0.36);
+  background: linear-gradient(
+    180deg,
+    rgba(232, 189, 120, 0.13),
+    rgba(232, 189, 120, 0.035)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 247, 226, 0.06),
+    0 7px 22px rgba(0, 0, 0, 0.14);
+}
+
+.tabActive::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.tabActive .tabIcon {
+  opacity: 1;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 6px rgba(247, 220, 164, 0.3));
+}
+
+/* Tribute */
+
+.tribute {
+  position: relative;
+  padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
+  border-top: 1px solid rgba(232, 189, 120, 0.1);
+  scroll-margin-top: 5.5rem;
+  overflow: hidden;
+}
+
+.tribute::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -14vw;
+  width: min(55vw, 720px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(232, 189, 120, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tribute::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -14vw;
+  width: min(55vw, 720px);
+  aspect-ratio: 1;
+  translate: 12% 12%;
+  border: 1px dashed rgba(142, 216, 202, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sectionInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tributeHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.72fr);
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  margin-bottom: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.sectionKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: rgba(232, 189, 120, 0.74);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.sectionKicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 189, 120, 0.68),
+    transparent
+  );
+}
+
+.sectionTitle {
+  max-width: 760px;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.1vw, 3.8rem);
+  font-weight: 380;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.sectionTitle em {
+  display: block;
+  padding-right: 0.08em;
+  font-weight: 330;
+  font-style: italic;
+  background: linear-gradient(100deg, #f8e1b7, #e8bd78 55%, #ecb1c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sectionLead {
+  max-width: 420px;
+  padding-bottom: 0.4rem;
+  color: rgba(203, 208, 221, 0.64);
+  font-size: 0.9rem;
+  line-height: 1.82;
+}
+
+.theoremGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.theoremCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 2vw, 1.75rem);
+  border: 1px solid rgba(232, 189, 120, 0.13);
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, rgba(20, 28, 46, 0.6), rgba(8, 12, 22, 0.58));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  overflow: hidden;
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    background-color 300ms ease;
+}
+
+.theoremCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 189, 120, 0.45),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+.theoremCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232, 189, 120, 0.26);
+}
+
+.cardSymbol {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  color: rgba(232, 189, 120, 0.045);
+  font-family: var(--font-display);
+  font-size: 5.8rem;
+  font-style: italic;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cardTop {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.cardLabel {
+  color: rgba(232, 189, 120, 0.66);
+  font-size: 0.48rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cardStatus {
+  padding: 0.23rem 0.44rem;
+  border: 1px solid rgba(142, 216, 202, 0.14);
+  border-radius: 999px;
+  color: rgba(142, 216, 202, 0.55);
+  font-size: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.35rem;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 1.7vw, 1.52rem);
+  font-weight: 420;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.cardStatement {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.85rem;
+  color: rgba(203, 208, 221, 0.62);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.cardStatement span {
+  color: rgba(142, 216, 202, 0.68);
+  font-family: var(--font-body);
+  font-size: 0.46rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.05rem;
+  margin-bottom: 1.4rem;
+  color: rgba(203, 208, 221, 0.58);
+  font-size: 0.82rem;
+  line-height: 1.74;
+}
+
+.cardProof {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(248, 243, 232, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: rgba(170, 177, 196, 0.34);
+  font-size: 0.43rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.qed {
+  color: rgba(232, 189, 120, 0.62);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.tributeQuote {
+  position: relative;
+  margin: clamp(2.8rem, 5vw, 4rem) auto 0;
+  padding: clamp(1.8rem, 3.4vw, 2.8rem) 1rem 0;
+  max-width: 900px;
+  border-top: 1px solid rgba(248, 243, 232, 0.06);
+  text-align: center;
+}
+
+.quoteMark {
+  display: block;
+  height: 1.3rem;
+  color: rgba(232, 189, 120, 0.32);
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.tributeQuote blockquote {
+  max-width: 760px;
+  margin: 0.2rem auto 0;
+  color: rgba(248, 243, 232, 0.82);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.8rem);
+  font-style: italic;
+  font-weight: 330;
+  line-height: 1.52;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.tributeQuote figcaption {
+  margin-top: 1.15rem;
+  color: rgba(170, 177, 196, 0.4);
+  font-size: 0.48rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Wishes */
+
+.wishes {
+  position: relative;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--page-gutter) clamp(4rem, 7vw, 6.5rem);
+  scroll-margin-top: 5.5rem;
+}
+
+.wishesCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  border: 1px solid rgba(232, 189, 120, 0.18);
+  border-radius: 32px;
+  background:
+    linear-gradient(150deg, rgba(18, 26, 43, 0.88), rgba(7, 11, 21, 0.86));
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  overflow: hidden;
+}
+
+.wishesCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(247, 220, 164, 0.65),
+    transparent
+  );
+  z-index: 3;
+}
+
+.wishesCopy {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2rem, 5vw, 4.3rem);
+}
+
+.wishesTitle {
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.7vw, 3.45rem);
+  font-weight: 380;
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+}
+
+.wishesTitle em {
+  display: block;
+  padding-right: 0.08em;
+  font-weight: 330;
+  font-style: italic;
+  background: linear-gradient(100deg, #f8e1b7, #e8bd78 55%, #ecb1c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.wishBody {
+  margin-top: 1.5rem;
+}
+
+.wishBody p {
+  max-width: 580px;
+  color: rgba(203, 208, 221, 0.66);
+  font-size: 0.89rem;
+  line-height: 1.84;
+}
+
+.wishBody p + p {
+  margin-top: 0.85rem;
+}
+
+.salutation {
+  color: rgba(247, 220, 164, 0.86) !important;
+  font-family: var(--font-display);
+  font-size: 1.02rem !important;
+  font-style: italic;
+}
+
+.wishSignature {
+  margin-top: 1.65rem;
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.wishSignature span {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(170, 177, 196, 0.46);
+  font-family: var(--font-body);
+  font-size: 0.47rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.wishesArt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border-left: 1px solid rgba(248, 243, 232, 0.06);
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(232, 189, 120, 0.095),
+      transparent 58%
+    ),
+    linear-gradient(160deg, rgba(11, 17, 30, 0.5), rgba(6, 10, 18, 0.7));
+  text-align: center;
+  overflow: hidden;
+}
+
+.wishesArt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232, 189, 120, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 189, 120, 0.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(
+    circle at 50% 48%,
+    rgba(0, 0, 0, 0.8),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.artLabel {
+  position: relative;
+  z-index: 1;
+  color: rgba(232, 189, 120, 0.54);
+  font-size: 0.46rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.wishesArt svg {
+  position: relative;
+  z-index: 1;
+}
+
+.artCaption {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  color: rgba(248, 243, 232, 0.58);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.artEquation {
+  position: relative;
+  z-index: 1;
+  color: rgba(142, 216, 202, 0.47);
+  font-size: 0.47rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@keyframes arrowBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 1180px) {
+  .heroInner {
+    gap: clamp(2rem, 3.4vw, 3.5rem);
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 4.7vw, 4rem);
+  }
+
+  .lab {
+    padding: 0.65rem;
+    border-radius: 26px;
+  }
+
+  .tabs {
+    gap: 0.22rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .tab {
+    min-height: 57px;
+  }
+
+  .tabLabel {
+    font-size: 0.51rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    padding-top: clamp(6.6rem, 12vh, 8rem);
+    align-items: flex-start;
+  }
+
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 800px;
+    gap: clamp(2.4rem, 5vw, 3.2rem);
+  }
+
+  .heroCopy {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .eyebrow {
+    justify-content: center;
+  }
+
+  .lead {
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroMeta,
+  .heroActions {
+    justify-content: center;
+  }
+
+  .lab {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .tributeHeader {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+
+  .sectionLead {
+    max-width: 620px;
+    padding: 0;
+  }
+
+  .theoremGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theoremCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .wishesCard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wishesArt {
+    border-left: 0;
+    border-top: 1px solid rgba(248, 243, 232, 0.06);
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 6.7rem;
+    padding-bottom: 3rem;
+  }
+
+  .title {
+    font-size: clamp(2.65rem, 11vw, 3.5rem);
+    line-height: 0.98;
+  }
+
+  .titleName {
+    font-size: 0.8em;
+    line-height: 1.06;
+  }
+
+  .eyebrow {
+    font-size: 0.45rem;
+    letter-spacing: 0.14em;
+  }
+
+  .eyebrow::after {
+    display: none;
+  }
+
+  .lead {
+    font-size: 0.84rem;
+    line-height: 1.76;
+  }
+
+  .chip {
+    font-size: 0.49rem;
+    padding: 0.43rem 0.62rem;
+  }
+
+  .heroActions {
+    gap: 0.8rem;
+    flex-direction: column;
+  }
+
+  .heroSignature {
+    font-size: 0.72rem;
+  }
+
+  .lab {
+    padding: 0.55rem;
+    border-radius: 22px;
+  }
+
+  .labBar {
+    align-items: flex-start;
+    padding: 0.4rem 0.35rem 0.65rem;
+  }
+
+  .labKicker {
+    font-size: 0.86rem;
+  }
+
+  .labNote {
+    display: none;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.22rem;
+    padding: 0 0.1rem 0.42rem;
+  }
+
+  .tab {
+    grid-column: span 2;
+    min-height: 56px;
+    border-radius: 12px;
+  }
+
+  .tab:nth-last-child(2) {
+    grid-column: 2 / span 2;
+  }
+
+  .tab:nth-last-child(1) {
+    grid-column: 4 / span 2;
+  }
+
+  .tabIcon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .tabLabel {
+    font-size: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .sectionTitle {
+    font-size: clamp(2rem, 7.5vw, 2.8rem);
+  }
+
+  .theoremGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theoremCard:last-child {
+    grid-column: auto;
+  }
+
+  .cardBody {
+    font-size: 0.84rem;
+  }
+
+  .tributeQuote blockquote {
+    font-size: 1.18rem;
+  }
+
+  .wishes {
+    padding-bottom: 3.5rem;
+  }
+
+  .wishesCopy {
+    padding: 1.65rem 1.3rem 1.9rem;
+  }
+
+  .wishesTitle {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .wishBody p {
+    font-size: 0.85rem;
+  }
+
+  .wishesArt {
+    min-height: 420px;
+    padding: 1.3rem 1rem 1.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .chip {
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .liveBadge {
+    display: none;
+  }
+
+  .tabs {
+    gap: 0.18rem;
+  }
+
+  .tabLabel {
+    font-size: 0.46rem;
+  }
+
+  .sectionKicker {
+    font-size: 0.47rem;
+    letter-spacing: 0.15em;
+  }
+
+  .tributeQuote blockquote {
+    font-size: 1.08rem;
+  }
+
+  .wishesCopy {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}

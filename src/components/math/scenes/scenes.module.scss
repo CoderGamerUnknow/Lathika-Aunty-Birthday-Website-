@@ -1,0 +1,709 @@
+.sceneSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.gridLine {
+  stroke: rgba(248, 243, 232, 0.045);
+  stroke-width: 1;
+}
+
+.gridLineMajor {
+  stroke: rgba(232, 189, 120, 0.08);
+  stroke-width: 1;
+}
+
+.axisLine {
+  stroke: rgba(232, 189, 120, 0.23);
+  stroke-width: 1;
+}
+
+.axisLineSoft {
+  stroke: rgba(248, 243, 232, 0.1);
+  stroke-width: 1;
+}
+
+.axisText {
+  fill: rgba(203, 208, 221, 0.3);
+  font-family: var(--font-body);
+  font-size: 7px;
+  letter-spacing: 0.02em;
+}
+
+.microLabel {
+  fill: rgba(203, 208, 221, 0.4);
+  font-family: var(--font-body);
+  font-size: 6.8px;
+  font-weight: 500;
+  letter-spacing: 1.35px;
+}
+
+.svgEyebrow {
+  fill: rgba(232, 189, 120, 0.78);
+  font-family: var(--font-body);
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+}
+
+.svgValue {
+  fill: rgba(248, 243, 232, 0.88);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.svgValueGold {
+  fill: var(--gold-bright);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.svgValueTeal {
+  fill: var(--teal);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.svgValueMuted {
+  fill: rgba(203, 208, 221, 0.42);
+  font-family: var(--font-body);
+  font-size: 7.5px;
+  letter-spacing: 0.05em;
+}
+
+.svgFormula {
+  fill: rgba(247, 220, 164, 0.82);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.svgFormulaRose {
+  fill: rgba(233, 166, 184, 0.8);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-style: italic;
+}
+
+.svgBigFormula {
+  fill: var(--cream);
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 350;
+  letter-spacing: -0.02em;
+}
+
+.svgSmallFormula {
+  fill: rgba(247, 220, 164, 0.72);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-style: italic;
+}
+
+.svgBigNumber {
+  fill: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 350;
+  letter-spacing: -0.045em;
+}
+
+.pointLabel {
+  fill: rgba(248, 243, 232, 0.78);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.pointSubLabel {
+  fill: rgba(142, 216, 202, 0.72);
+  font-family: var(--font-body);
+  font-size: 6.5px;
+  letter-spacing: 0.08em;
+}
+
+.dashLine {
+  stroke: rgba(232, 189, 120, 0.27);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.dashLineTeal {
+  stroke: rgba(142, 216, 202, 0.24);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.dividerLine {
+  stroke: rgba(248, 243, 232, 0.075);
+  stroke-width: 1;
+}
+
+/* Trigonometry */
+
+.trigCircle {
+  fill: rgba(232, 189, 120, 0.018);
+  stroke: rgba(232, 189, 120, 0.5);
+  stroke-width: 1.35;
+}
+
+.trigCircleSoft {
+  fill: none;
+  stroke: rgba(248, 243, 232, 0.08);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+
+.trigRadius {
+  stroke: rgba(247, 220, 164, 0.8);
+  stroke-width: 1.2;
+}
+
+.trigProjection {
+  stroke: rgba(142, 216, 202, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 2.5 5;
+}
+
+.trigArc {
+  fill: none;
+  stroke: rgba(233, 166, 184, 0.82);
+  stroke-width: 1.7;
+}
+
+.trigPoint {
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 7px rgba(247, 220, 164, 0.75));
+}
+
+.trigPointHalo {
+  fill: none;
+  stroke: rgba(247, 220, 164, 0.28);
+  stroke-width: 1;
+}
+
+.waveSine {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.45;
+  filter: drop-shadow(0 0 5px rgba(232, 189, 120, 0.24));
+}
+
+.waveCosine {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1.1;
+  opacity: 0.75;
+}
+
+.waveBaseline {
+  stroke: rgba(248, 243, 232, 0.16);
+  stroke-width: 1;
+}
+
+.waveDivider {
+  stroke: rgba(248, 243, 232, 0.07);
+  stroke-width: 1;
+}
+
+.readoutCard {
+  fill: rgba(7, 11, 21, 0.32);
+  stroke: rgba(248, 243, 232, 0.055);
+  stroke-width: 1;
+}
+
+.legendDotGold {
+  fill: var(--gold);
+}
+
+.legendDotTeal {
+  fill: var(--teal);
+}
+
+/* Parabola */
+
+.parabolaBase {
+  fill: none;
+  stroke: rgba(232, 189, 120, 0.13);
+  stroke-width: 5;
+}
+
+.parabolaTrace {
+  fill: none;
+  stroke: url(#parabolaStroke);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawPath 2.3s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  filter: drop-shadow(0 0 6px rgba(232, 189, 120, 0.3));
+}
+
+.parabolaSolid {
+  fill: none;
+  stroke: url(#parabolaStroke);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.parabolaGuide {
+  stroke: rgba(142, 216, 202, 0.26);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.travelerGlow {
+  fill: rgba(247, 220, 164, 0.18);
+}
+
+.travelerDot {
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 7px rgba(247, 220, 164, 0.9));
+}
+
+.vertexHalo {
+  fill: rgba(247, 220, 164, 0.08);
+  stroke: rgba(247, 220, 164, 0.32);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3.2s ease-in-out infinite;
+}
+
+.vertexDot {
+  fill: var(--gold-bright);
+}
+
+.vertexLabel {
+  fill: rgba(248, 243, 232, 0.7);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-style: italic;
+}
+
+/* Coordinates */
+
+.heartFill {
+  fill: url(#heartGradient);
+  opacity: 0.15;
+  animation: fadeIn 1s 0.45s ease both;
+}
+
+.heartTrace {
+  fill: none;
+  stroke: url(#heartStroke);
+  stroke-width: 1.55;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawPath 2.1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  filter: drop-shadow(0 0 6px rgba(232, 189, 120, 0.3));
+}
+
+.heartStatic {
+  fill: none;
+  stroke: url(#heartStroke);
+  stroke-width: 1.55;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.constellationDot {
+  fill: rgba(247, 220, 164, 0.88);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dotIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.constellationDotSoft {
+  fill: rgba(142, 216, 202, 0.5);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dotIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.chordLine {
+  stroke: rgba(233, 166, 184, 0.3);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.pointMarker {
+  fill: none;
+  stroke: rgba(247, 220, 164, 0.65);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dotIn 0.6s 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.midpointMarker {
+  fill: var(--rose);
+  filter: drop-shadow(0 0 5px rgba(233, 166, 184, 0.6));
+  animation: fadeIn 0.6s 1.6s ease both;
+}
+
+.heartLabel {
+  fill: rgba(248, 243, 232, 0.72);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-style: italic;
+  animation: fadeIn 0.6s 1.3s ease both;
+}
+
+.heartLabelRose {
+  fill: rgba(233, 166, 184, 0.86);
+}
+
+/* Circle theorem */
+
+.circleLine {
+  fill: rgba(232, 189, 120, 0.025);
+  stroke: rgba(232, 189, 120, 0.52);
+  stroke-width: 1.35;
+}
+
+.circleSoft {
+  fill: none;
+  stroke: rgba(248, 243, 232, 0.08);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+
+.radiusLine {
+  stroke: rgba(247, 220, 164, 0.82);
+  stroke-width: 1.25;
+}
+
+.tangentLine {
+  stroke: rgba(233, 166, 184, 0.78);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 5px rgba(233, 166, 184, 0.25));
+}
+
+.rightAngle {
+  fill: none;
+  stroke: rgba(142, 216, 202, 0.8);
+  stroke-width: 1.2;
+}
+
+.circleArc {
+  fill: none;
+  stroke: rgba(142, 216, 202, 0.6);
+  stroke-width: 1.4;
+}
+
+.triangleFill {
+  fill: rgba(232, 189, 120, 0.045);
+}
+
+.contactPoint {
+  fill: var(--rose);
+  filter: drop-shadow(0 0 7px rgba(233, 166, 184, 0.7));
+}
+
+.contactHalo {
+  fill: none;
+  stroke: rgba(233, 166, 184, 0.26);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.centerPoint {
+  fill: var(--gold-bright);
+}
+
+.theoremRule {
+  stroke: rgba(232, 189, 120, 0.13);
+  stroke-width: 1;
+}
+
+.liveLabel {
+  fill: rgba(142, 216, 202, 0.7);
+  font-family: var(--font-body);
+  font-size: 6.5px;
+  letter-spacing: 1.4px;
+}
+
+/* Polygon */
+
+.circumCircle {
+  fill: none;
+  stroke: rgba(248, 243, 232, 0.075);
+  stroke-width: 1;
+  stroke-dasharray: 2 7;
+}
+
+.polygonShape {
+  fill: rgba(232, 189, 120, 0.03);
+  stroke: rgba(232, 189, 120, 0.7);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 7px rgba(232, 189, 120, 0.18));
+}
+
+.polygonEnter {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: polygonIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.polygonStatic {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.wedge {
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fadeIn 0.7s 0.3s ease both;
+}
+
+.wedgeGold {
+  fill: rgba(232, 189, 120, 0.065);
+}
+
+.wedgeRose {
+  fill: rgba(233, 166, 184, 0.045);
+}
+
+.vertexDot {
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 4px rgba(247, 220, 164, 0.45));
+}
+
+.centerDot {
+  fill: rgba(233, 166, 184, 0.7);
+}
+
+.interiorSector {
+  fill: rgba(233, 166, 184, 0.14);
+  stroke: rgba(233, 166, 184, 0.64);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fadeIn 0.6s 0.6s ease both;
+}
+
+.interiorLabel {
+  fill: rgba(233, 166, 184, 0.9);
+  font-family: var(--font-body);
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  animation: fadeIn 0.6s 0.75s ease both;
+}
+
+.polygonStepLabel {
+  fill: rgba(248, 243, 232, 0.52);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.formulaRow {
+  animation: fadeIn 0.7s 0.5s ease both;
+}
+
+.formulaRowLate {
+  animation: fadeIn 0.7s 0.75s ease both;
+}
+
+.pulseGold {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.fadeIn {
+  animation: fadeIn 0.7s 0.25s ease both;
+}
+
+.fadeInLate {
+  animation: fadeIn 0.7s 0.75s ease both;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dotIn {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes polygonIn {
+  from {
+    opacity: 0;
+    transform: scale(0.84) rotate(-6deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 701px) {
+  .svgEyebrow {
+    font-size: 8.2px;
+    letter-spacing: 1.45px;
+  }
+
+  .microLabel {
+    font-size: 7.6px;
+    letter-spacing: 1.1px;
+  }
+
+  .svgValue,
+  .svgValueGold,
+  .svgValueTeal {
+    font-size: 11px;
+  }
+
+  .svgValueMuted {
+    font-size: 8.5px;
+  }
+
+  .svgFormula,
+  .svgFormulaRose {
+    font-size: 11.5px;
+  }
+
+  .axisText {
+    font-size: 8px;
+  }
+
+  .pointLabel,
+  .heartLabel {
+    font-size: 12.5px;
+  }
+
+  .svgBigNumber {
+    font-size: 40px;
+  }
+
+  .svgBigFormula {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  .svgEyebrow,
+  .microLabel,
+  .svgValueMuted {
+    display: none;
+  }
+
+  .svgValue,
+  .svgValueGold,
+  .svgValueTeal {
+    font-size: 16px;
+  }
+
+  .svgFormula,
+  .svgFormulaRose {
+    font-size: 14.5px;
+  }
+
+  .axisText {
+    font-size: 10px;
+  }
+
+  .pointLabel,
+  .heartLabel {
+    font-size: 15px;
+  }
+
+  .pointSubLabel {
+    font-size: 9px;
+  }
+
+  .svgBigNumber {
+    font-size: 48px;
+  }
+
+  .svgBigFormula {
+    font-size: 30px;
+  }
+
+  .vertexLabel {
+    font-size: 13px;
+  }
+
+  .interiorLabel {
+    font-size: 10px;
+  }
+
+  .polygonStepLabel {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parabolaTrace,
+  .heartTrace {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .polygonEnter,
+  .wedge,
+  .constellationDot,
+  .constellationDotSoft,
+  .pointMarker,
+  .interiorSector,
+  .interiorLabel,
+  .formulaRow,
+  .formulaRowLate,
+  .fadeIn,
+  .fadeInLate,
+  .heartLabel,
+  .midpointMarker,
+  .heartFill,
+  .contactHalo,
+  .vertexHalo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

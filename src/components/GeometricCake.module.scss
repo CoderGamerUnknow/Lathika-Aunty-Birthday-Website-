@@ -1,0 +1,95 @@
+.cakeSvg {
+  width: min(100%, 390px);
+  height: auto;
+  overflow: visible;
+}
+
+.orbit {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbitSpin 90s linear infinite;
+}
+
+.orbitPoint {
+  filter: drop-shadow(0 0 8px rgba(247, 220, 164, 0.7));
+}
+
+.cakeFloat {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: cakeFloat 7s ease-in-out infinite;
+}
+
+.flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: flameFlicker 2.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(247, 220, 164, 0.5));
+}
+
+.stars path,
+.stars circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: starTwinkle 4.5s ease-in-out infinite alternate;
+}
+
+.stars path:nth-child(2) {
+  animation-delay: -1.8s;
+}
+
+.stars circle:nth-child(3) {
+  animation-delay: -2.8s;
+}
+
+.stars circle:nth-child(4) {
+  animation-delay: -1.1s;
+}
+
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cakeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes flameFlicker {
+  from {
+    opacity: 0.82;
+    transform: scaleY(0.9) rotate(-1.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1.08) rotate(1.5deg);
+  }
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: 0.35;
+    transform: scale(0.86);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .cakeFloat,
+  .flame,
+  .stars path,
+  .stars circle {
+    animation: none;
+  }
+}

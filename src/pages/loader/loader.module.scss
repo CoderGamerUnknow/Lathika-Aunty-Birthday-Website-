@@ -1,0 +1,420 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 62%, rgba(232, 189, 120, 0.13), transparent 52%),
+    radial-gradient(ellipse at 16% 18%, rgba(233, 166, 184, 0.07), transparent 42%),
+    linear-gradient(145deg, #070b14 0%, #0b1020 55%, #060912 100%);
+  clip-path: inset(0% 0% 0% 0%);
+  will-change: clip-path;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232, 189, 120, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 189, 120, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(
+    circle at 50% 52%,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.35) 56%,
+    transparent 82%
+  );
+  opacity: 0.75;
+}
+
+.horizon {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 189, 120, 0.14),
+    rgba(142, 216, 202, 0.16),
+    transparent
+  );
+}
+
+.centerGlow {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  width: min(110vw, 1200px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(232, 189, 120, 0.1) 0%,
+    rgba(232, 189, 120, 0.025) 38%,
+    transparent 64%
+  );
+  filter: blur(16px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(118vmin, 900px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.orbit svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.spinSlow,
+.spinReverse,
+.radiusArm {
+  transform-box: view-box;
+  transform-origin: 360px 360px;
+}
+
+.spinSlow {
+  animation: spin 110s linear infinite;
+}
+
+.spinReverse {
+  animation: spinReverse 70s linear infinite;
+}
+
+.radiusArm {
+  animation: spin 22s linear infinite;
+}
+
+.equationCloud {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.formula {
+  position: absolute;
+  padding: 0.48rem 0.85rem;
+  border: 1px solid rgba(232, 189, 120, 0.15);
+  border-radius: 999px;
+  background: rgba(10, 15, 27, 0.38);
+  color: rgba(248, 243, 232, 0.46);
+  font-family: var(--font-display);
+  font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.formulaOne {
+  top: 17%;
+  left: 7%;
+}
+
+.formulaTwo {
+  top: 24%;
+  right: 7%;
+}
+
+.formulaThree {
+  bottom: 24%;
+  left: 9%;
+}
+
+.formulaFour {
+  right: 10%;
+  bottom: 20%;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(1100px, 92vw);
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(232, 189, 120, 0.2);
+  border-radius: 999px;
+  background: rgba(8, 12, 22, 0.48);
+  color: rgba(247, 220, 164, 0.72);
+  font-size: clamp(0.46rem, 0.7vw, 0.58rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 0 10px rgba(233, 166, 184, 0.8);
+}
+
+.title {
+  margin-top: clamp(1.4rem, 3vh, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 12.2vw, 9.6rem);
+  font-weight: 350;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  text-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+}
+
+.titleMask {
+  display: block;
+  overflow: hidden;
+  padding: 0.14em 0.1em 0.18em 0.05em;
+  margin: -0.14em -0.1em -0.06em -0.05em;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform;
+}
+
+.wordAccent {
+  padding-right: 0.08em;
+  font-style: italic;
+  font-weight: 330;
+  background: linear-gradient(
+    104deg,
+    #fdf2d5 5%,
+    #f4d293 34%,
+    #dfac67 62%,
+    #edafbf 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin-top: clamp(1.1rem, 2.6vh, 1.9rem);
+  color: rgba(247, 220, 164, 0.82);
+  font-size: clamp(0.62rem, 1.05vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.equationTag {
+  margin-top: 0.95rem;
+  color: rgba(170, 177, 196, 0.55);
+  font-family: var(--font-display);
+  font-size: clamp(0.76rem, 1.1vw, 0.95rem);
+  font-style: italic;
+  letter-spacing: 0.015em;
+}
+
+.progressBlock {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: clamp(1.6rem, 4vh, 3rem);
+  translate: -50% 0;
+  width: min(420px, calc(100vw - 3rem));
+}
+
+.progressTrack {
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(248, 243, 232, 0.12);
+}
+
+.progressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold), var(--rose));
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.progressMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+  color: rgba(170, 177, 196, 0.5);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.progressNumber {
+  display: inline-flex;
+  gap: 0.18rem;
+  color: var(--gold-bright);
+  font-variant-numeric: tabular-nums;
+}
+
+.skip {
+  position: absolute;
+  z-index: 6;
+  top: clamp(1rem, 2.5vw, 1.8rem);
+  right: var(--page-gutter);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(248, 243, 232, 0.12);
+  border-radius: 999px;
+  background: rgba(9, 13, 24, 0.48);
+  color: rgba(203, 208, 221, 0.66);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  transition:
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.skip:hover {
+  color: var(--cream);
+  border-color: rgba(232, 189, 120, 0.36);
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255, 247, 223, 0.95), transparent 46%),
+    #f8f3e8;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .orbit {
+    width: 132vmin;
+    opacity: 0.52;
+  }
+
+  .formulaOne {
+    top: 13%;
+    left: 4%;
+  }
+
+  .formulaTwo {
+    top: 17%;
+    right: 4%;
+  }
+
+  .formulaThree {
+    bottom: 18%;
+    left: 6%;
+  }
+
+  .formulaFour {
+    right: 5%;
+    bottom: 14%;
+  }
+}
+
+@media (max-width: 700px) {
+  .formulaTwo,
+  .formulaFour {
+    display: none;
+  }
+
+  .formulaOne {
+    top: 11%;
+    left: 5%;
+  }
+
+  .formulaThree {
+    bottom: 16%;
+    left: 7%;
+  }
+
+  .title {
+    font-size: clamp(3.6rem, 18vw, 6rem);
+  }
+
+  .eyebrow {
+    letter-spacing: 0.15em;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .equationTag {
+    max-width: 90vw;
+    line-height: 1.5;
+  }
+
+  .progressBlock {
+    bottom: 1.3rem;
+  }
+
+  .progressMeta {
+    font-size: 0.46rem;
+    letter-spacing: 0.08em;
+  }
+
+  .skip {
+    padding: 0.42rem 0.65rem;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-height: 650px) and (min-width: 701px) {
+  .title {
+    font-size: clamp(3.2rem, 10vh, 6.4rem);
+  }
+
+  .subtitle {
+    margin-top: 0.9rem;
+  }
+
+  .equationCloud {
+    display: none;
+  }
+}

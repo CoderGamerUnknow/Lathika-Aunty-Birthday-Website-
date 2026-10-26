@@ -1,0 +1,240 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  padding: clamp(0.7rem, 1.6vw, 1.2rem) var(--page-gutter) 0;
+  pointer-events: none;
+  animation: navIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nav {
+  width: min(1180px, 100%);
+  min-height: 58px;
+  margin: 0 auto;
+  padding: 0.42rem 0.55rem 0.42rem 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 1px solid rgba(232, 189, 120, 0.16);
+  border-radius: 999px;
+  background:
+    linear-gradient(110deg, rgba(19, 27, 45, 0.84), rgba(8, 13, 24, 0.76));
+  box-shadow:
+    0 18px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(22px);
+  pointer-events: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 0.15rem 0.3rem 0.15rem 0.15rem;
+}
+
+.brandMark {
+  position: relative;
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(232, 189, 120, 0.36);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(247, 220, 164, 0.15), transparent 60%),
+    rgba(232, 189, 120, 0.03);
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.brandMark::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px dashed rgba(232, 189, 120, 0.16);
+  border-radius: 50%;
+  transition: transform 700ms ease;
+}
+
+.brand:hover .brandMark::after {
+  transform: rotate(55deg);
+}
+
+.brandCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.06rem;
+  line-height: 1.1;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  white-space: nowrap;
+}
+
+.brandNote {
+  font-size: 0.46rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(170, 177, 196, 0.72);
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+  margin-left: auto;
+  padding: 0.18rem;
+  border: 1px solid rgba(248, 243, 232, 0.055);
+  border-radius: 999px;
+  background: rgba(3, 6, 12, 0.24);
+}
+
+.link {
+  position: relative;
+  padding: 0.5rem 0.88rem;
+  border-radius: 999px;
+  color: rgba(203, 208, 221, 0.68);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    color 220ms ease,
+    background-color 220ms ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.27rem;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.link:hover {
+  color: var(--cream);
+}
+
+.linkActive {
+  color: var(--gold-bright);
+  background: rgba(232, 189, 120, 0.08);
+}
+
+.linkActive::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.aside {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  color: rgba(170, 177, 196, 0.62);
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.asideDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 0 8px rgba(233, 166, 184, 0.5);
+}
+
+@keyframes navIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .aside {
+    display: none;
+  }
+
+  .nav {
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .brandCopy {
+    display: none;
+  }
+
+  .brandMark {
+    width: 34px;
+    height: 34px;
+    font-size: 1.08rem;
+  }
+
+  .nav {
+    min-height: 52px;
+    justify-content: space-between;
+    padding-left: 0.55rem;
+  }
+
+  .links {
+    margin-left: 0;
+  }
+
+  .link {
+    padding: 0.46rem 0.68rem;
+    font-size: 0.56rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .nav {
+    gap: 0.3rem;
+    padding: 0.35rem 0.4rem 0.35rem 0.45rem;
+  }
+
+  .brandMark {
+    width: 31px;
+    height: 31px;
+  }
+
+  .link {
+    padding: 0.42rem 0.48rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
+  }
+}
