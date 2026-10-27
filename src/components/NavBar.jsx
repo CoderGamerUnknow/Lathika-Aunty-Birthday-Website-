@@ -8,6 +8,7 @@ const SECTIONS = [
   { id: "memories", label: "Memories" },
   { id: "surprise", label: "Surprise" },
   { id: "wishes", label: "Wishes" },
+  { id: "quiz", label: "Quiz" },
   { id: "guestbook", label: "Guestbook" },
 ];
 

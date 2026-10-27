@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BirthdayQuiz } from "../../components/birthdayQuiz/BirthdayQuiz";
 import { CelebrationCanvas } from "../../components/CelebrationCanvas";
 import { GeometricCake } from "../../components/GeometricCake";
 import { DEMOS } from "../../components/math/demos";
@@ -433,6 +434,8 @@ export function Home() {
             </div>
           </div>
         </section>
+
+        <BirthdayQuiz onCelebrate={celebrate} />
 
         <WishesWall onCelebrate={celebrate} />
       </main>
