@@ -6,6 +6,7 @@ const SECTIONS = [
   { id: "celebration", label: "Celebration" },
   { id: "tribute", label: "Tribute" },
   { id: "wishes", label: "Wishes" },
+  { id: "guestbook", label: "Guestbook" },
 ];
 
 export function NavBar() {

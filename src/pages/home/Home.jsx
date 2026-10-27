@@ -6,6 +6,7 @@ import { GeometricCake } from "../../components/GeometricCake";
 import { DEMOS } from "../../components/math/demos";
 import { DemoIcon } from "../../components/math/DemoIcon";
 import { MathStage } from "../../components/math/MathStage";
+import { WishesWall } from "../../components/wishesWall/WishesWall";
 import { useScrollContext } from "../../components/ScrollContext";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { animateHomeIn } from "./animations";
@@ -147,6 +148,15 @@ export function Home() {
       y: rect ? rect.top + rect.height * 0.4 : window.innerHeight * 0.4,
       count: 26,
       spread: 0.82,
+    });
+  };
+
+  const celebrate = ({ count = 34, spread = 1 } = {}) => {
+    confettiRef.current?.burst({
+      x: window.innerWidth * 0.5,
+      y: window.innerHeight * 0.42,
+      count,
+      spread,
     });
   };
 
@@ -417,6 +427,8 @@ export function Home() {
             </div>
           </div>
         </section>
+
+        <WishesWall onCelebrate={celebrate} />
       </main>
 
       <CelebrationCanvas ref={confettiRef} />

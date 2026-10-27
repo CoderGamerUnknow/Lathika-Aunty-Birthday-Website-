@@ -1,0 +1,430 @@
+.wall {
+  position: relative;
+  padding: clamp(4rem, 7vw, 6.5rem) var(--page-gutter);
+  border-top: 1px solid rgba(232, 189, 120, 0.1);
+  scroll-margin-top: 5.5rem;
+  overflow: hidden;
+}
+
+.wall::before {
+  content: "";
+  position: absolute;
+  left: -18vw;
+  bottom: -28vw;
+  width: min(62vw, 780px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(142, 216, 202, 0.055),
+    transparent 66%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.72fr);
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  margin-bottom: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: rgba(232, 189, 120, 0.74);
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(232, 189, 120, 0.68), transparent);
+}
+
+.title {
+  max-width: 760px;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.1vw, 3.8rem);
+  font-weight: 380;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.title em {
+  display: block;
+  padding-right: 0.08em;
+  font-weight: 330;
+  font-style: italic;
+  background: linear-gradient(100deg, #f8e1b7, #e8bd78 55%, #ecb1c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  max-width: 420px;
+  padding-bottom: 0.4rem;
+  color: rgba(203, 208, 221, 0.64);
+  font-size: 0.9rem;
+  line-height: 1.82;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(1.25rem, 2.6vw, 2.2rem);
+}
+
+/* The signing card */
+
+.form {
+  position: sticky;
+  top: 7.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.4rem, 2.4vw, 2rem);
+  border: 1px solid rgba(232, 189, 120, 0.18);
+  border-radius: 24px;
+  background:
+    linear-gradient(155deg, rgba(20, 28, 46, 0.72), rgba(7, 11, 21, 0.72));
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  overflow: hidden;
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14%;
+  right: 14%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(247, 220, 164, 0.55),
+    transparent
+  );
+}
+
+.formKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.15rem;
+  color: rgba(247, 220, 164, 0.8);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.formKicker span {
+  color: var(--rose);
+  font-size: 0.7rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field > span:first-child {
+  color: rgba(203, 208, 221, 0.6);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.66rem 0.8rem;
+  border: 1px solid rgba(248, 243, 232, 0.1);
+  border-radius: 12px;
+  background: rgba(4, 8, 16, 0.5);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 116px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(170, 177, 196, 0.38);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: rgba(232, 189, 120, 0.52);
+  background: rgba(4, 8, 16, 0.68);
+}
+
+.counter {
+  align-self: flex-end;
+  color: rgba(170, 177, 196, 0.42);
+  font-size: 0.46rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.counterLow {
+  color: var(--rose);
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 1rem;
+  border: 1px solid rgba(232, 189, 120, 0.4);
+  border-radius: 999px;
+  background: linear-gradient(
+    100deg,
+    rgba(247, 220, 164, 0.94),
+    rgba(232, 189, 120, 0.88)
+  );
+  color: #14131a;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms ease;
+}
+
+.submit span {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(232, 189, 120, 0.2);
+}
+
+.status {
+  min-height: 1.1rem;
+  color: rgba(170, 177, 196, 0.5);
+  font-size: 0.48rem;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+/* The wall itself */
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.35rem;
+}
+
+.boardCount {
+  color: rgba(247, 220, 164, 0.82);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.boardNote {
+  color: rgba(170, 177, 196, 0.44);
+  font-size: 0.46rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.wishGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wishCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.25rem 1.2rem 1rem;
+  border: 1px solid rgba(232, 189, 120, 0.14);
+  border-radius: 18px;
+  background:
+    linear-gradient(158deg, rgba(24, 32, 51, 0.65), rgba(8, 12, 22, 0.62));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transform: rotate(var(--tilt, 0deg));
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.wishCard:nth-child(3n) {
+  --tilt: 0deg;
+}
+
+.wishCard:hover {
+  transform: rotate(0deg) translateY(-3px);
+  border-color: rgba(232, 189, 120, 0.34);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.24);
+}
+
+.corner {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px dashed rgba(232, 189, 120, 0.3);
+  border-radius: 50%;
+  color: rgba(247, 220, 164, 0.65);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.wishText {
+  padding-right: 2.2rem;
+  color: rgba(248, 243, 232, 0.86);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 340;
+  line-height: 1.62;
+  letter-spacing: -0.005em;
+}
+
+.wishMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.wishName {
+  color: var(--gold-bright);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.wishRole {
+  color: rgba(170, 177, 196, 0.5);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.wishFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(232, 189, 120, 0.12);
+}
+
+.wishDate {
+  color: rgba(170, 177, 196, 0.4);
+  font-size: 0.46rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.remove {
+  color: rgba(233, 166, 184, 0.55);
+  font-size: 0.46rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 200ms ease;
+}
+
+.remove:hover {
+  color: var(--rose);
+}
+
+.empty {
+  padding: 2.4rem 1.5rem;
+  border: 1px dashed rgba(232, 189, 120, 0.2);
+  border-radius: 18px;
+  color: rgba(203, 208, 221, 0.55);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .wishGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .boardTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .boardNote {
+    text-align: left;
+  }
+}
