@@ -5,6 +5,7 @@ import styles from "./NavBar.module.scss";
 const SECTIONS = [
   { id: "celebration", label: "Celebration" },
   { id: "tribute", label: "Tribute" },
+  { id: "surprise", label: "Surprise" },
   { id: "wishes", label: "Wishes" },
   { id: "guestbook", label: "Guestbook" },
 ];
