@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import gsap from "gsap";
 import { Loader } from "../pages";
 import { MathCursor } from "./MathCursor";
+import { MusicBox } from "./musicBox/MusicBox";
 import { StickyCursor } from "./StickyCursor";
 import { NavBar } from "./NavBar";
 import { ScrollToTopButton } from "./scrollToTopButton/ScrollToTopButton";
@@ -44,6 +45,7 @@ export function Layout({ children }) {
           {children}
           <Footer />
           <ScrollToTopButton />
+          <MusicBox />
           <StickyCursor />
           <MathCursor />
         </>
