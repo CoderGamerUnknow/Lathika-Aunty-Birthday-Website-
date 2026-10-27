@@ -6,6 +6,7 @@ import { GeometricCake } from "../../components/GeometricCake";
 import { DEMOS } from "../../components/math/demos";
 import { DemoIcon } from "../../components/math/DemoIcon";
 import { GiftSurprise } from "../../components/giftSurprise/GiftSurprise";
+import { MemoryTimeline } from "../../components/memoryTimeline/MemoryTimeline";
 import { MathStage } from "../../components/math/MathStage";
 import { WishesWall } from "../../components/wishesWall/WishesWall";
 import { useScrollContext } from "../../components/ScrollContext";
@@ -369,6 +370,8 @@ export function Home() {
             </figure>
           </div>
         </section>
+
+        <MemoryTimeline />
 
         <GiftSurprise onCelebrate={celebrate} />
 
