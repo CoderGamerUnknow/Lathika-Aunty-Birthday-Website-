@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BirthdayQuiz } from "../../components/birthdayQuiz/BirthdayQuiz";
+import { GiftCertificate } from "../../components/certificate/GiftCertificate";
 import { CelebrationCanvas } from "../../components/CelebrationCanvas";
 import { GeometricCake } from "../../components/GeometricCake";
 import { DEMOS } from "../../components/math/demos";
@@ -436,6 +437,8 @@ export function Home() {
         </section>
 
         <BirthdayQuiz onCelebrate={celebrate} />
+
+        <GiftCertificate />
 
         <WishesWall onCelebrate={celebrate} />
       </main>
