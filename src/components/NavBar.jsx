@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useScrollContext } from "./ScrollContext";
 import styles from "./NavBar.module.scss";
 
@@ -15,6 +15,7 @@ const SECTIONS = [
 
 export function NavBar() {
   const { lenis } = useScrollContext();
+  const linksRef = useRef(null);
   const [activeSection, setActiveSection] = useState("celebration");
 
   useEffect(() => {
@@ -39,6 +40,24 @@ export function NavBar() {
 
     return () => lenis.off("scroll", updateActiveSection);
   }, [lenis]);
+
+  useEffect(() => {
+    const container = linksRef.current;
+    const active = container?.querySelector('[aria-current="location"]');
+
+    if (!container || !active) return;
+
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const left =
+      active.offsetLeft - container.clientWidth / 2 + active.clientWidth / 2;
+
+    container.scrollTo({
+      left: Math.max(0, left),
+      behavior: reduced ? "auto" : "smooth",
+    });
+  }, [activeSection]);
 
   const scrollToSection = (id) => (event) => {
     event.preventDefault();
@@ -79,7 +98,7 @@ export function NavBar() {
           </span>
         </a>
 
-        <div className={styles.links}>
+        <div className={styles.links} ref={linksRef}>
           {SECTIONS.map(({ id, label }) => (
             <a
               key={id}

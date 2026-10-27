@@ -1,3 +1,25 @@
+.skipLink {
+  position: fixed;
+  top: 0.7rem;
+  left: 50%;
+  z-index: 600;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  background: var(--gold-bright);
+  color: #14131a;
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: translate(-50%, -180%);
+  transition: transform 220ms ease;
+}
+
+.skipLink:focus-visible {
+  transform: translate(-50%, 0);
+  outline-offset: 2px;
+}
+
 .footer {
   position: relative;
   z-index: 2;

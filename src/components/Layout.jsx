@@ -7,6 +7,7 @@ import { MusicBox } from "./musicBox/MusicBox";
 import { StickyCursor } from "./StickyCursor";
 import { NavBar } from "./NavBar";
 import { ScrollToTopButton } from "./scrollToTopButton/ScrollToTopButton";
+import { ShareButton } from "./share/ShareButton";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import styles from "./Layout.module.scss";
 
@@ -41,6 +42,9 @@ export function Layout({ children }) {
     <>
       {loaderFinished ? (
         <>
+          <a className={styles.skipLink} href="#tribute">
+            Skip to the tribute
+          </a>
           <NavBar />
           {children}
           <Footer />
@@ -83,6 +87,7 @@ function Footer() {
           <span className={styles.footerDot} aria-hidden="true" />
           <span>Made with love by your students</span>
         </div>
+        <ShareButton />
       </div>
     </footer>
   );

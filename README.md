@@ -19,6 +19,20 @@ demonstrations, a tribute, and a personal birthday letter from the students.
   - Polygon interior-angle theorem that adds a side on every click
 - **Celebratory math confetti** — canvas confetti made of π, θ, √, Δ, ∞ and
   geometric shapes, triggered by the theorem buttons.
+- **Birthday music box** — a floating control performs “Happy Birthday” with the
+  Web Audio API, so the site still ships without any audio files.
+- **The unopened gift** — a floating geometric box that lifts its lid and
+  unfolds a hidden letter when you open it.
+- **A year in moments** — a five-stop memory timeline whose gold rail is drawn
+  by GSAP ScrollTrigger as you scroll.
+- **The final exam** — a playful four-question paper with instant feedback,
+  per-answer confetti, a scored remark and a retake.
+- **Wishes wall** — classmates can sign a guestbook; wishes validate, cap at
+  240 characters and persist in `localStorage`.
+- **Certificate generator** — type a name and download a 1600 × 1131 PNG
+  certificate of infinite gratitude, painted on canvas.
+- **Shareable footer** — Web Share support with a clipboard fallback, plus a
+  keyboard skip link into the tribute.
 - **GSAP scroll-triggered reveals** with Lenis smooth scrolling.
 - **Respectful tribute** — three light-hearted mathematical “proofs” of the
   teacher’s kindness, patience, and belief in her students.
@@ -62,18 +76,25 @@ The production files are written to `dist/`.
 ```text
 src/
   components/
+    birthdayQuiz/             four-question final exam with scoring
     CelebrationCanvas.jsx     math-symbol confetti
+    certificate/              canvas keepsake and PNG export
     GeometricCake.jsx         SVG birthday cake
-    Layout.jsx                loader gate, nav, footer, cursor
+    giftSurprise/             CSS gift box and hidden letter
+    Layout.jsx                loader gate, nav, footer, skip link, cursor
     MathCursor.jsx            gold orbit cursor
-    NavBar.jsx                smooth-scroll section navigation
+    memoryTimeline/           scroll-scrubbed year in five moments
+    musicBox/                 Web Audio birthday melody
+    NavBar.jsx                scrollable section navigation
     Scroll.jsx                Lenis + ScrollTrigger container
+    share/                    Web Share / clipboard control
     SiteBackground.jsx        graph-paper backdrop and formulas
+    wishesWall/               localStorage guestbook
     math/                     demo data, icons, stage and five live SVG scenes
   hooks/
     usePrefersReducedMotion.js
   pages/
-    home/                     dashboard, tribute, birthday letter
+    home/                     dashboard, tribute, gift, quiz, keepsake, wall
     loader/                   GSAP math intro
   index.css                   design tokens and global styles
   main.jsx                    application entry point
